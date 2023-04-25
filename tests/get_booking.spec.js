@@ -1,7 +1,7 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
-test(" Get All Booking id ", async ({ request, baseURL }) => {
+test(" Get Booking id ", async ({ request, baseURL }) => {
 
   // setting a random id number
     const id = 100;

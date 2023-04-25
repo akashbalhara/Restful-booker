@@ -4,8 +4,8 @@ import { test, expect } from '@playwright/test';
 test(" Create-Token ", async ({ request, baseURL }) => {
     const response = await request.post(`${baseURL}auth`, {
       data: {
-        username: "admin",
-        password: "password123",
+        username: 'admin',
+        password: 'password123',
         
       },
       headers: {
@@ -14,9 +14,12 @@ test(" Create-Token ", async ({ request, baseURL }) => {
       },
 
     });
-    
-    console.log(await response);
+
+    // getting the api response
     console.log(await response.json());
-    console.log(await response.body());
+
+    // assert that the api is working as expected
+    expect(response.ok()).toBeTruthy();
+    expect(response.status()).toBe(200);
 
   });

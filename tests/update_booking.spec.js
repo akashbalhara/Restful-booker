@@ -44,7 +44,7 @@ test(" Update a booking ", async ({ request, baseURL }) => {
 
   // udpating the booking
   const response2 = await request.put(`${baseURL}booking/`+BookingID, {data: updatedBookingData, headers : {Cookie:  cookieVal}});
-  const updatedBookingDetails = await response2.text();
+  const updatedBookingDetails = await response2.json();
 
   // assert that the first name for the booking has been changed
   expect (bookingDetails.booking.firstname).not.toBe(updatedBookingDetails.firstname);
